@@ -141,3 +141,42 @@ footer{border-top:1px solid var(--bd);position:relative;z-index:1;}
 .f-copy,.f-credit{font-family:var(--ffm);font-size:10px;letter-spacing:.1em;color:var(--fd);}
 @media(max-width:960px){.hero-inner{grid-template-columns:1fr;}.hero-portrait{max-height:300px;}.about-grid{grid-template-columns:1fr;}.about-photo{max-width:360px;}.f-card.featured{grid-template-columns:1fr;}.m-grid{grid-template-columns:1fr 1fr;}nav{display:none;}.wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));}}
 @media(max-width:600px){.section{padding-block:72px;}.contact-wrap{padding-block:80px;}.hero{padding-block:72px 60px;}.hero-stats{gap:28px;}.m-grid{grid-template-columns:1fr;}.about-photo{max-width:100%;}.filter-bar{display:flex;flex-wrap:wrap;}.f-btn{font-size:9px;padding:8px 12px;}}
+/* Header always visible */
+header { opacity: 1 !important; }
+
+/* Hero surname */
+.hero-surname { font-family: var(--ffd); font-size: clamp(28px, 4.5vw, 54px); line-height: 1; color: var(--ac); letter-spacing: .04em; margin-bottom: 20px; }
+
+/* Hobbies */
+.hobbies-h { font-family: var(--ffd); font-size: clamp(38px, 5vw, 60px); line-height: 1; margin-bottom: 14px; }
+.hobbies-sub { font-size: 15px; color: var(--fm); margin-bottom: 48px; max-width: 500px; line-height: 1.7; }
+
+/* Carousel — per-slide position:absolute approach */
+.carousel-wrap { position: relative; border: 1px solid var(--bd); border-radius: 4px; overflow: hidden; }
+.carousel-viewport { position: relative; overflow: hidden; border-radius: 3px; aspect-ratio: 16/9; background: #000; }
+.carousel-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; will-change: transform, opacity; }
+.carousel-media { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 44px 28px 24px; background: linear-gradient(to top, rgba(8,8,9,.9) 0%, transparent 100%); }
+.carousel-cap-label { font-family: var(--ffm); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--ac); margin-bottom: 6px; }
+.carousel-cap-title { font-family: var(--ffd); font-size: 24px; color: #fff; letter-spacing: .04em; margin-bottom: 4px; }
+.carousel-cap-sub { font-family: var(--ffm); font-size: 11px; color: rgba(255,255,255,.6); letter-spacing: .12em; text-transform: uppercase; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(8,8,9,.65); border: 1px solid rgba(255,255,255,.12); color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 18px; cursor: pointer; backdrop-filter: blur(8px); transition: background .2s, border-color .2s, color .2s; display: flex; align-items: center; justify-content: center; }
+.carousel-btn:hover { background: var(--ac); border-color: var(--ac); }
+.carousel-btn-prev { left: 14px; }
+.carousel-btn-next { right: 14px; }
+.carousel-dots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+.carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.35); border: none; cursor: pointer; padding: 0; transition: background .25s, transform .25s; }
+.carousel-dot.active { background: var(--ac); transform: scale(1.4); }
+.carousel-counter { position: absolute; top: 14px; right: 16px; font-family: var(--ffm); font-size: 11px; color: rgba(255,255,255,.65); letter-spacing: .1em; z-index: 10; }
+.carousel-cur { color: var(--ac); font-size: 14px; }
+
+/* Better hover contrast — global overrides */
+.soc { transition: none; }
+.nav a { transition: color .2s; }
+nav a:hover { color: var(--ac) !important; }
+
+/* Magnetic button feel */
+.btn-primary, .btn-outline, .btn-hdr { transition: background .2s, box-shadow .2s, border-color .2s, color .2s; }
+.btn-primary:hover { background: #e81535; box-shadow: 0 0 40px rgba(200,16,46,.4); }
+.btn-outline:hover { border-color: var(--ac); color: var(--ac); background: rgba(200,16,46,.06); }
+.btn-hdr:hover { background: var(--ac); border-color: var(--ac); color: #fff; box-shadow: 0 0 24px rgba(200,16,46,.3); }
